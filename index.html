@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)file:///C:/PROYECTOS/foro/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VI Foro de Investigación “Educación Ambiental y Sostenibilidad”</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+        
+        :root {
+            --primary: #006400;
+            --secondary: #228B22;
+            --accent: #FFD700;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f4;
+        }
+        
+        header {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 100, 0, 0.75), rgba(0, 100, 0, 0.85)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .header-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            background-color: #FFF;
+            width: 100%;
+        }
+        
+        .logo {
+            height: 90px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #333;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            background: #ffed4e;
+        }
+        
+        nav {
+            background: rgba(255,255,255,0.98);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.4s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .card-body h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .tematica {
+            background: #f8f9fa;
+            border-left: 6px solid var(--secondary);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .ods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .ods-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-width: 100px;
+        }
+        
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 2000;
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.4rem;
+            }
+            .nav-menu {
+                gap: 15px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado con imagen -->
+    <header>
+        <div class="header-content">
+            <h1>VI Foro de Investigación</h1>
+            <p class="subtitle">“Educación Ambiental y Sostenibilidad”</p>
+            <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Santa Marta, Colombia • Aliado estratégico: Institución Educativa Distrital Técnica Hugo J. Bermúdez
+            </p>
+            <!--<a href="file:///C:/PROYECTOS/foro/index.html#inscripcion" class="btn">Inscribirse como Asistente</a>-->
+            <a href="https://docs.google.com/document/d/1v4HPJaRy_QCyckzIuOLCgsX8etbmuaEl/edit?usp=sharing&ouid=117833933278095385270&rtpof=true&sd=true" class="btn" style="background: white;" download target="_blank">Terminos de referencia</a>
+        </div>
+        
+        <!-- Efecto de hojas flotantes -->
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; background: linear-gradient(transparent, #006400);"></div>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                🌱 VI Foro UNAD
+            </div>
+            <ul class="nav-menu">
+                <li><a href="file:///C:/PROYECTOS/foro/index.html#presentacion">Presentación</a></li>
+                <li><a href="file:///C:/PROYECTOS/foro/index.html#objetivo">Objetivo</a></li>
+                <li><a href="file:///C:/PROYECTOS/foro/index.html#tematicas">Temáticas</a></li>
+                <li><a href="file:///C:/PROYECTOS/foro/index.html#inscripcion">Inscripción</a></li>
+                <li><a href="file:///C:/PROYECTOS/foro/index.html#agenda">Agenda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Presentación -->
+    <section id="presentacion">
+        <div class="container">
+            <h2>Presentación del Evento</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div>
+                    <p style="font-size: 1.15rem; margin-bottom: 25px;">
+                        El <strong>VI Foro de investigación “Educación ambiental y sostenibilidad”</strong> está dirigido a la comunidad académica interna y externa de la Universidad Nacional Abierta y a Distancia (UNAD), docentes, estudiantes, investigadores, profesionales y público en general interesado en temas ambientales e investigación.
+                    </p>
+                    <p style="font-size: 1.15rem;">
+                        El evento busca exponer avances y resultados de proyectos en curso o finalizados sobre <strong>educación ambiental</strong>, <strong>desarrollo sostenible</strong> y <strong>seguridad alimentaria</strong>.
+                    </p>
+                    <div style="margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 12px; border-left: 6px solid var(--secondary);">
+                        <strong>Aliado estratégico:</strong><br>
+                        Instituto Educativo Hugo J. Bermúdez<br>
+                        Quien aporta el espacio físico para la realización del foro.
+                    </div>
+                </div>
+                <div style="background: url(&#39;https://picsum.photos/id/1018/600/400&#39;) center/cover; height: 380px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);"></div>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 1.1rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                En este foro pueden participar como ponentes <strong>estudiantes de primaria y secundaria</strong>, así como estudiantes y docentes de la UNAD, mediante presentaciones con diapositivas de proyectos relacionados con los temas centrales.
+            </p>
+        </div>
+    </section>
+
+    <!-- Objetivo General -->
+    <section id="objetivo" style="background: white;">
+        <div class="container">
+            <h2>Objetivo General</h2>
+            <div style="background: linear-gradient(135deg, #f1f8e9, #e8f5e9); padding: 60px 50px; border-radius: 20px; text-align: center; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 30px rgba(34,139,34,0.1);">
+                <p style="font-size: 1.4rem; line-height: 1.7; font-style: italic; color: #1b5e20;">
+                    Promover el intercambio de conocimientos y experiencias en investigación sobre educación ambiental, desarrollo sostenible y seguridad alimentaria, mediante la participación activa de estudiantes de primaria, secundaria y estamentos de la Universidad Nacional Abierta y a Distancia (UNAD), con el fin de fomentar una cultura de sostenibilidad y responsabilidad ambiental en la ciudad de Santa Marta.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temáticas -->
+    <section id="tematicas">
+        <div class="container">
+            <h2>Temáticas del Foro</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header" style="background-image: url(&#39;https://picsum.photos/id/1015/600/300&#39;);"></div>
+                    <div class="card-body">
+                        <h3>🌿 Educación Ambiental</h3>
+                        <p>Proyectos que promuevan la conciencia, valores y competencias ambientales en todos los niveles educativos.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background-image: url(&#39;https://picsum.photos/id/133/600/300&#39;);"></div>
+                    <div class="card-body">
+                        <h3>♻️ Desarrollo Sostenible</h3>
+                        <p>Investigaciones orientadas al equilibrio entre crecimiento económico, protección ambiental y equidad social.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background-image: url(&#39;https://picsum.photos/id/201/600/300&#39;);"></div>
+                    <div class="card-body">
+                        <h3>🥕 Seguridad Alimentaria</h3>
+                        <p>Iniciativas relacionadas con producción sostenible de alimentos, agricultura urbana y acceso a alimentación saludable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 70px;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Aporte a los Objetivos de Desarrollo Sostenible (ODS)</h3>
+                <div class="ods">
+                    <div class="ods-item">ODS 6<br><strong>Agua limpia y saneamiento</strong></div>
+                    <div class="ods-item">ODS 11<br><strong>Ciudades y comunidades sostenibles</strong></div>
+                    <div class="ods-item">ODS 12<br><strong>Producción y consumo responsables</strong></div>
+                    <div class="ods-item">ODS 13<br><strong>Acción por el clima</strong></div>
+                    <div class="ods-item">ODS 14<br><strong>Vida submarina</strong></div>
+                    <div class="ods-item">ODS 15<br><strong>Vida de ecosistemas terrestres</strong></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Áreas del Saber</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <span class="tematica">Ciencias Agrarias</span>
+                    <span class="tematica">Ciencias Biológicas y del Mar</span>
+                    <span class="tematica">Ciencias Exactas y de la Tierra</span>
+                    <span class="tematica">Ciencias del medio ambiente y el hábitat</span>
+                    <span class="tematica">Ingenierías</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inscripción y Participación -->
+    <section id="inscripcion" style="background: #e8f5e9;">
+        <div class="container">
+            <h2>Proceso de Inscripción y Participación</h2>
+            <div class="card-grid">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>🎤 Ponentes</h3>
+                        <p>Invitación por correo electrónico para postular resumen de proyecto. Se seleccionarán las mejores ponencias y se enviará confirmación.</p>
+                        <a href="https://forms.office.com/r/THqVvmdqCH" class="btn" style="background: var(--primary); color: white; margin-top: 20px;" target="_blank">Postular Ponencia</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>👥 Plantilla de ponencia</h3>
+                        <p>Haz clic para descargar la plantilla de ponencia.</p>
+                        <a href="https://docs.google.com/presentation/d/1pDZeBTtumucSGWd_P2tEvZIPB_61Zorp/edit?usp=sharing&ouid=117833933278095385270&rtpof=true&sd=true" class="btn" style="background: var(--primary); color: white; margin-top: 20px;" target="_blank">Descargar plantilla</a>
+                    </div>
+                </div>                    
+                <div class="card">
+                    <div class="card-body">
+                        <h3>🏆 Concurso de Logo</h3>
+                        <p>Dirigido a estudiantes del proyecto “Desarrollo de un modelo de agricultura sostenible urbana” en la IED Hugo J. Bermúdez. Consiste en diseñar el logo del emprendimiento.</p>
+                        <a href="file:///C:/PROYECTOS/foro/index.html#" class="btn" style="background: var(--accent); color: #333; margin-top: 20px;">Participar en el Concurso</a>
+                    </div>
+                </div>
+                <!--
+                <div class="card">
+                    <div class="card-body">
+                        <h3>👥 Asistentes</h3>
+                        <p>Se enviará formulario de inscripción en línea a entidades externas, comunidad académica, grupos y semilleros de investigación.</p>
+                        <a href="file:///C:/PROYECTOS/foro/index.html#" class="btn" style="background: var(--primary); color: white; margin-top: 20px;">Registrarse como Asistente</a>
+                    </div>
+                </div>-->                       
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda -->
+    <section id="agenda">
+        <div class="container">
+            <h2>Agenda del Evento</h2>
+            <div style="text-align: center; margin: 40px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Consulta la agenda completa del VI Foro</p>
+                <a href="https://canva.link/99wt14fxzu89a2k" target="_blank" class="btn" style="font-size: 1.3rem; padding: 18px 40px;">
+                    Ver Agenda Completa
+                </a>
+                <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">(Enlace externo a Canva)</p>
+            </div>
+            
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);">
+                <!--<p><strong>Nota:</strong> La agenda incluye presentaciones de estudiantes de primaria, secundaria y ponencias de la comunidad UNAD. El evento se realizará en las instalaciones del IED Hugo J. Bermúdez, Santa Marta.</p>-->
+                <h2>Organizan</h2>
+            <div class="logos">
+                <!-- Logos UNAD y Hugo J. Bermúdez (usando placeholders reales) -->
+                <img src="unad.jpeg" alt="Logo UNAD" class="logo" style="height: 85px;">
+                <img src="hugojbermudez.jpg" alt="Logo IED Hugo J. Bermúdez" class="logo">
+                <img src="zoobios.jpg" alt="Logo UNAD" class="logo" style="height: 85px;">
+                <img src="WhatsApp Image 2026-04-20 at 9.58.01 PM.jpeg" alt="Logo IED Hugo J. Bermúdez" class="logo">                
+                <img src="WhatsApp Image 2026-04-20 at 9.59.37 PM.jpeg" alt="Logo UNAD" class="logo" style="height: 75px;">
+                <img src="WhatsApp Image 2026-04-20 at 9.59.40 PM.jpeg" alt="Logo IED Hugo J. Bermúdez" class="logo" style="width: 20%;height: auto;">                
+            </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>VI Foro de Investigación</h3>
+                <p>“Educación Ambiental y Sostenibilidad”</p>
+                <p>Santa Marta • 2026</p>
+            </div>
+            <div>
+                <h4>Organiza</h4>
+                <p>Universidad Nacional Abierta y a Distancia (UNAD)</p>
+                <p>Aliado estratégico: IED Hugo J. Bermúdez</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>Correo: foroambiental@unad.edu.co</p>
+                <p>Teléfono: (Contacto a través de la UNAD o IED)</p>
+            </div>
+        </div>
+        <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; font-size: 0.9rem;">
+            © 2026 Universidad Nacional Abierta y a Distancia | Todos los derechos reservados
+        </div>
+    </footer>
+
+    <!-- Botón scroll to top -->
+    <div id="scrollTop" class="scroll-top">↑</div>
+
+    <script>
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Botón scroll to top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animación simple al cargar
+        window.addEventListener('load', () => {
+            console.log('%c✅ Página del VI Foro cargada correctamente', 'color: #228B22; font-weight: bold;');
+        });
+    </script>
+
+</body></html>
